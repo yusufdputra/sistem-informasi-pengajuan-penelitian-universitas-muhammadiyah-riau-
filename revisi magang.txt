@@ -1,0 +1,14 @@
+revisi 
+
+penambahan upload dukomen di mahasiswa
+
+opsion pada dosen yang ada di sana
+nama2 dosen
+
+cetak laporan di mahasiswa di arsip
+
+username:password@github.com/
+
+git config user.name "fajrifahreza"
+
+git config user.email "fajri12azeta@gmail.com"
