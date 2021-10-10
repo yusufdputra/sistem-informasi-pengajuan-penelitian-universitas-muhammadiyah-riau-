@@ -96,9 +96,17 @@
                             <i class="fa fa-paper-plane"></i> Visi & Misi
                         </div>
                         <div class="card-body">
-                            <p>
-                                Azas UMRI berasaskan Al-Quran, As-Sunnah, Pancasila dan Undang-Undangan Dasar 1945. Tujuan Menyiapkan peserta didik menjadi sarjana muslim yang beriman dan bertaqwa, bermarwah dan bermartabat yang mempunyai kemampuan akademik dan profesional serta beramal menuju terwujudnya masyarakat utama, adil dan makmur yang di ridhai Allah SWT. Mengamalkan, mengembangkan, menciptakan dan menyebarluaskan ilmu pengetahuan, teknologi dan kesenian dalam rangka memajukan islam dan meningkatkan kesejahteraan umat manusia. Visi Menjadikan Universitas Muhammadiyah Riau sebagai lembaga pendidikan tinggi yang bermarwah dan bermartabat dalam menghasilkan sumber daya manusia yang menguasai IPTEKS dengan landasan IMTAQ tahun 2030. Misi Mewujudkan keunggulan bidang pendidikan, pengajaran, penelitian, pengabdian kepada masyarakat dan Al-Islam Kemuhammadiyahan. Menguasai dan memanfaatkan Ilmu Pengetahuan dan Teknologi dalam pendidikan, pengajaran, penelitian, pengabdian kepada masyarakat dan Al-Islam Kemuhammadiyahan. Menyelenggarakan pendidikan, pengajaran, penelitian, pengabdian kepada masyarakat yang dilandasi etika, nilai dan moral Islami. Menciptakan iklim kondusif untuk tumbuh dan berkembangnya budaya mutu, pengembangan IPTEK dan implementasi iman dan taqwa.
-                            </p>
+                            <h4><strong>VISI</strong></h4>
+                            <p>Menjadikan Fakultas KIP UMRI sebagai penghasil tenaga pendidik dan kependidikan yang bermarwah, bermartabat, dan menguasai IPTEKS yang berlandaskan IMTAQ tahun 2030</p>
+
+                            <h4><strong>MISI</strong></h4>
+                            <ol>
+                                <li>Menyelenggarakanpendidikandanpengajaran yang bermutu untuk menghasilkan tenaga pendidik dan kependidikan yang unggul dan berkepribadian islami.</li>
+                                <li>Menyelenggarakan kegiatan penelitian di bidang pendidikan, keguruan, dan teknologi yang bermanfaat bagi pengembangan masyarakat.</li>
+                                <li>Melaksanakan kegiatan pengabdian pada masyarakat untuk mewujudkan masyarakat yang cerdas, kreatif, dan sejahtera.</li>
+                                <li>Menyelenggarakan kerjasama dengan berbagai pihak untuk meningkatkan mutu kinerja fakultas.</li>
+                                <li>Menyelenggarakan tatakelola kelembagaan secara efektif dan efesien untuk menunjang peningkatan mutu fakultas.</li>
+                            </ol>
                         </div>
                     </div>
                 </div>

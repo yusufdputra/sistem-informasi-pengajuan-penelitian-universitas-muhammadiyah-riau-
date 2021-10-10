@@ -8,6 +8,7 @@
 		{
 			parent::__construct();
 			$this->load->model('pengajuan_m');
+			$this->load->model('dosen_m');
 			$this->load->model('auth_model');
 
 			if (!$this->session->logged_in) {
@@ -34,6 +35,9 @@
 		{
 			$x['data'] = $this->pengajuan_m->pengajuan_prodi();
 			$t['data'] = $this->pengajuan_m->notif();
+			$x['dosen'] = $this->dosen_m->getDosenProdi($this->session->userdata('level'));
+
+			
 			$this->load->view('template/header', $t);
 			$this->load->view('prodi/pengajuanprodi_v', $x);
 			$this->load->view('template/footer');
@@ -65,6 +69,7 @@
 
 			$data['data'] = $this->pengajuan_m->arsip();
 			$t['data'] = $this->pengajuan_m->notif();
+
 			$this->load->view('template/header', $t);
 			$this->load->view('pengaju/arsip_v', $data);
 			$this->load->view('template/footer');

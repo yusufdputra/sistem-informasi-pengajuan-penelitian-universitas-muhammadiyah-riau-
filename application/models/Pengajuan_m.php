@@ -14,8 +14,9 @@ class Pengajuan_m extends CI_Model
 
 	function arsip()
 	{
-		$this->db->select('*');
+		$this->db->select('*' );
 		$this->db->from('pengajuan');
+		$this->db->order_by('tanggal_pengajuan', 'DESC');
 		return $this->db->get()->result();
 	}
 	function pengajuan_mahasiswa()

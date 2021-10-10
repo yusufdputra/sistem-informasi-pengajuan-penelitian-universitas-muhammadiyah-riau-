@@ -8,7 +8,7 @@
             </header>
 
           <div class="panel-body">
-            <table class="table table-hover dataTable table-striped w-full" data-plugin="dataTable">
+            <table class="table table-hover dataTable table-striped w-full" id="exampleTableTools">
               <thead>
                 <tr>
                   <th>Nama</th>
