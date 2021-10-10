@@ -1,9 +1,6 @@
 <div class="page">
 <div class="page-content container-fluid">
 <div class="row" data-plugin="matchHeight" data-by-row="true">
-
-
-
 <div class="page-content container-fluid">
 <!-- Panel Api -->
 <div class="panel">
