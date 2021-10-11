@@ -23,6 +23,7 @@
                   <th>NIM</th>
                   <th>Jurusan</th>
                   <th>Tgl Pengajuan</th>
+                  <th>Berkas Persyaratan</th>
                   <th>Status</th>
                   <th>Detail</th>
                 </tr>
@@ -34,6 +35,7 @@
                   <td><?=$key->nim?></td>
                   <td><?=$key->jurusan?></td>
                   <td><?=$key->tanggal_pengajuan?></td>
+                  <td><a class="btn btn-success btn-xs" target="_BLANK" href="<?= base_url('assets/pdf/' . $key->url_persyaratan) ?>" style="color: white"> Lihat </a></td>
                   <td><a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modal_edit<?=$key->id_pengajuan?>" style="color: white"><i class="icon fa-eye" aria-hidden="true"></i>Proses</a>  <?=$key->status_pengajuan?> </td>
                   <td> <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalrincian<?=$key->id_pengajuan?>" style="color: white"><i class="icon fa-eye" aria-hidden="true"></i>Lihat</a>   
                     <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?=$key->id_pengajuan?>" style="color: white"><i class="icon fa-trash-o"></i>hapus</a></td>
@@ -60,6 +62,8 @@
                   <th>NIM</th>
                   <th>Jurusan</th>
                   <th>Tgl Pengajuan</th>
+                  
+                  <th>Berkas Persyaratan</th>
                   <th>Status</th>
                   <th>Detail</th>
                 </tr>
@@ -71,6 +75,7 @@
                   <td><?=$key->nim?></td>
                   <td><?=$key->jurusan?></td>
                   <td><?=$key->tanggal_pengajuan?></td>
+                  <td><a class="btn btn-success btn-xs" target="_BLANK" href="<?= base_url('assets/pdf/' . $key->url_persyaratan) ?>" style="color: white"> Lihat </a></td>
                   <td> <button class="btn btn-danger btn-xs"><?=$key->status_pengajuan?></button> </td>
                   <td> <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modalrincian<?=$key->id_pengajuan?>" style="color: white"><i class="icon fa-eye" aria-hidden="true"></i>Lihat</a>   
                     <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal_hapus<?=$key->id_pengajuan?>" style="color: white"><i class="icon fa-trash-o"></i>hapus</a></td>

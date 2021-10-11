@@ -32,6 +32,7 @@ class Pengajuan extends CI_Controller
         $username = $this->session->userdata('username');
         $jurusan = $this->session->userdata('jurusan');
         $email = $this->session->userdata('email');
+        $url_pdf = $this->savePDF();
 
         $data = array(
             'nama' => $nama,
@@ -43,7 +44,8 @@ class Pengajuan extends CI_Controller
             'judul3' => $this->input->post('judul3'),
             'status_pengajuan' => "Menunggu verifikasi",
             'kode_pengajuan' => $kode,
-            'tanggal_pengajuan' => $tanggal_pengajuan
+            'tanggal_pengajuan' => $tanggal_pengajuan,
+            'url_persyaratan' => $url_pdf,
         );
         $this->db->insert('pengajuan', $data);
         $this->session->set_flashdata('alert', 'PENGAJUAN BERHASIL. ID PENGAJUAN ANDA : <b style="font-size:14pt">' . $data['kode_pengajuan'] . '</b>');
@@ -77,5 +79,21 @@ class Pengajuan extends CI_Controller
         $this->load->view('template/header1');
         $this->load->view('pengaju/arsip_v', $data);
         $this->load->view('template/footer');
+    }
+
+    public function savePDF()
+    {
+        $this->input->post('syarat');
+        $config['upload_path']           = './assets/pdf';
+        $config['allowed_types'] = 'pdf';
+        $config['max_size']              = 5000;
+        $config['encrypt_name']          = TRUE;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        if (!$this->upload->do_upload('berkas')) {
+            echo $this->upload->display_errors();
+        } else {
+            return $this->upload->data("file_name");
+        }
     }
 }
