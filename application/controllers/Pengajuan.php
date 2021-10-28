@@ -17,7 +17,7 @@ class Pengajuan extends CI_Controller
 
     public function index()
     {
-        $this->load->view('template/header1');
+        $this->load->view('template/header');
         $this->load->view('pengaju/pengajuan_v');
         $this->load->view('template/footer');
     }
@@ -56,7 +56,7 @@ class Pengajuan extends CI_Controller
     {
 
         $data['data'] = $this->Pengajuan_m->pengajuan_mahasiswa();
-        $this->load->view('template/header1');
+        $this->load->view('template/header');
         $this->load->view('pengaju/tracking_v', $data);
         $this->load->view('template/footer');
     }
@@ -66,7 +66,7 @@ class Pengajuan extends CI_Controller
         $keyword = $this->input->get('keyword');
 
         $data['data'] = $this->Pengajuan_m->cari($keyword);
-        $this->load->view('template/header1');
+        $this->load->view('template/header');
         $this->load->view('pengaju/search', $data);
         $this->load->view('template/footer');
     }
@@ -76,7 +76,7 @@ class Pengajuan extends CI_Controller
 
         $data['data'] = $this->Pengajuan_m->arsip();
 
-        $this->load->view('template/header1');
+        $this->load->view('template/header');
         $this->load->view('pengaju/arsip_v', $data);
         $this->load->view('template/footer');
     }
