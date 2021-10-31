@@ -96,4 +96,33 @@ class Pengajuan extends CI_Controller
             return $this->upload->data("file_name");
         }
     }
+
+    public function cetak($id)
+    {
+        $this->load->library('pdfgenerator');
+        $data['data'] = $this->Pengajuan_m->byID($id);
+
+        if ($data['data']->judul1 != null) {
+            $data['judul'] = $data['data']->judul1;
+        }
+
+        if ($data['data']->judul2 != null) {
+            $data['judul'] = $data['data']->judul2;
+        }
+
+        if ($data['data']->judul3 != null) {
+            $data['judul'] = $data['data']->judul3;
+        }
+
+        // filename dari pdf ketika didownload
+        $file_pdf = 'Detail_Pengajuan';
+        // setting paper
+        $paper = 'A4';
+        //orientasi paper potrait / landscape
+        $orientation = "potrait";
+        $html = $this->load->view('pengaju/laporan_pdf', $data, true);
+        // run dompdf
+        $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
+     
+    }
 }

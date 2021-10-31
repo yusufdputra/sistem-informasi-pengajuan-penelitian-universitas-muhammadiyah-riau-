@@ -12,6 +12,14 @@ class Pengajuan_m extends CI_Model
 		return $this->db->get()->result();
 	}
 
+	function byID($id)
+	{
+		$this->db->select('*');
+		$this->db->from('pengajuan');
+		$this->db->where('id_pengajuan', $id);
+		return $this->db->get()->row();
+	}
+
 	function arsip()
 	{
 		$this->db->select('*' );
@@ -99,4 +107,6 @@ class Pengajuan_m extends CI_Model
 		$this->db->where('u.username', $x);
 		return $this->db->get()->result();
 	}
+
+
 }
