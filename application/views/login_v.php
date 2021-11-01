@@ -52,7 +52,7 @@
         <div class="page-brand-info">
           <div class="brand">
             <img class="brand-img" src="<?=base_url('assets/logo_umri.png" alt="...')?>" style="width: 80px">
-            <h2 class="brand-text " style="font-size: 25pt">System Informasi Aduan Fakultas FKIP Muhammadiah Riau</h2>
+            <h2 class="brand-text " style="font-size: 25pt">System Informasi Judul Skripsi Fakultas FKIP Muhammadiah Riau</h2>
           </div>
       <!--     <p class="font-size-20"></p> -->
         </div>
