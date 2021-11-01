@@ -89,7 +89,7 @@
         <i class="icon wb-more-horizontal" aria-hidden="true"></i>
       </button>
       <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-        <img class="navbar-brand-logo" src="../assets/images/logo.png" title="Remark">
+        <img class="navbar-brand-logo" src="<?= base_url('assets/logo_umri.png') ?>" title="Remark">
       </div>
       <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-search" data-toggle="collapse">
         <span class="sr-only">Toggle Search</span>
@@ -133,8 +133,8 @@
 
             </a>
             <div class="dropdown-menu" role="menu">
-              <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
-              <div class="dropdown-divider" role="presentation"></div>
+              <!-- <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a> -->
+              <!-- <div class="dropdown-divider" role="presentation"></div> -->
               <a class="dropdown-item" href="<?php echo base_url('login/logout') ?>" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
             </div>
           </li>
@@ -183,14 +183,7 @@
                   <?php endif ?>
                 </div>
               </div>
-              <div class="dropdown-menu-footer">
-                <a class="dropdown-menu-footer-btn" href="javascript:void(0)" role="button">
-                  <i class="icon wb-settings" aria-hidden="true"></i>
-                </a>
-                <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
-                  Lihat Semua pengajuan
-                </a>
-              </div>
+
             </div>
           </li>
         </ul>
@@ -277,8 +270,30 @@
             </ul>
             </li>
             </ul>
-
-
+          <?php } else if ($this->session->userdata('level') == "Mahasiswa") { ?>
+            <ul class="site-menu" data-plugin="menu">
+              <li class="site-menu-item has-sub">
+                <a href="<?= base_url('pengajuan/index') ?>">
+                  <i class="site-menu-icon wb-share" aria-hidden="true"></i>
+                  <span class="site-menu-title">Pengajuan</span>
+                  <span class="site-menu-arrow"></span>
+                </a>
+              </li>
+              <li class="site-menu-item has-sub">
+                <a href="<?= base_url('pengajuan/tracking') ?>">
+                  <i class="site-menu-icon fa fa-plane" aria-hidden="true"></i>
+                  <span class="site-menu-title">Tracking</span>
+                  <span class="site-menu-arrow"></span>
+                </a>
+              </li>
+              <li class="site-menu-item has-sub">
+                <a href="<?= base_url('pengajuan/arsip') ?>">
+                  <i class="site-menu-icon wb-pie-chart" aria-hidden="true"></i>
+                  <span class="site-menu-title">Arsip</span>
+                  <span class="site-menu-arrow"></span>
+                </a>
+              </li>
+            </ul>
           <?php } else { ?>
 
 

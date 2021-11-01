@@ -6,9 +6,13 @@ class Pengajuan extends CI_Controller
 
     public function __construct()
     {
+        // parent::__construct();
+        // $this->load->model('Pengajuan_m');
+        // $this->load->library('pagination');
         parent::__construct();
+        $this->load->model('dosen_m');
         $this->load->model('Pengajuan_m');
-        $this->load->library('pagination');
+        $this->load->model('auth_model');
         if (!$this->session->logged_in) {
             redirect('login');
         }
@@ -17,7 +21,9 @@ class Pengajuan extends CI_Controller
 
     public function index()
     {
-        $this->load->view('template/header');
+
+        $t['data'] = $this->Pengajuan_m->notif();
+        $this->load->view('template/header', $t);
         $this->load->view('pengaju/pengajuan_v');
         $this->load->view('template/footer');
     }
@@ -53,30 +59,31 @@ class Pengajuan extends CI_Controller
     }
 
     public function tracking()
-    {
+    { 
+        $t['data'] = $this->Pengajuan_m->notif();
 
         $data['data'] = $this->Pengajuan_m->pengajuan_mahasiswa();
-        $this->load->view('template/header');
+        $this->load->view('template/header', $t);
         $this->load->view('pengaju/tracking_v', $data);
         $this->load->view('template/footer');
     }
 
     public function search()
-    {
+    { $t['data'] = $this->Pengajuan_m->notif();
         $keyword = $this->input->get('keyword');
 
         $data['data'] = $this->Pengajuan_m->cari($keyword);
-        $this->load->view('template/header');
+        $this->load->view('template/header', $t);
         $this->load->view('pengaju/search', $data);
         $this->load->view('template/footer');
     }
 
     public function arsip()
     {
-
+        $t['data'] = $this->Pengajuan_m->notif();
         $data['data'] = $this->Pengajuan_m->arsip();
 
-        $this->load->view('template/header');
+        $this->load->view('template/header', $t);
         $this->load->view('pengaju/arsip_v', $data);
         $this->load->view('template/footer');
     }
@@ -123,6 +130,5 @@ class Pengajuan extends CI_Controller
         $html = $this->load->view('pengaju/laporan_pdf', $data, true);
         // run dompdf
         $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
-     
     }
 }

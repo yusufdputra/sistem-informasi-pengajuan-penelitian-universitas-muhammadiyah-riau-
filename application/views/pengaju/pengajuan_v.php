@@ -102,7 +102,7 @@
             <textarea class="form-control" id="textarea3" name="judul3" rows="3"></textarea>
           </div>
           <div class="form-group" data-plugin="formMaterial">
-            <label class="form-control-label" >Dokumen Persyaratan <b style="color: red">*</b></label>
+            <label class="form-control-label">Dokumen Persyaratan <b style="color: red">*</b></label>
             <input type="file" accept=".pdf" name="berkas" required class="form-control">
           </div>
         </div>

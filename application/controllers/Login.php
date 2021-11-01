@@ -72,8 +72,9 @@ class Login extends CI_Controller
 						$this->session->set_userdata('jurusan', $jurusan);
 						$this->session->set_userdata('email', $email);
 						$this->session->set_userdata($session);
-						redirect('Pengajuan');
-					} else {
+						redirect('pengajuan');
+					} 
+					else {
 						$session['logged_in'] = TRUE;
 						$this->session->set_userdata('username', $username);
 						//$this->session->set_userdata('email', $email);

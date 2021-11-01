@@ -99,7 +99,14 @@
 
 				<p>Judul yang diterima
 					<br>
-					: <?= strtoupper($judul) ?>
+					:
+					<?php
+					if ($data->status_pengajuan == 'Selesai') {
+						echo strtoupper($judul);
+					}else{
+						echo "-";
+					}
+					?>
 				</p>
 
 				<div style="width: 30%; text-align: left; float: right;">Pekabaru, <?= date("d F Y") ?></div><br>

@@ -46,8 +46,6 @@
 
 <script src="<?= base_url('assets/global/vendor/skycons/skycons.js') ?>"></script>
 
-<!-- <script src="<?= base_url('assets/global/vendor/chartist/chartist.min.js') ?>"></script>
-        <script src="<?= base_url('assets/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js') ?>"></script> -->
 
 <script src="<?= base_url('assets/global/vendor/aspieprogress/jquery-asPieProgress.min.js') ?>"></script>
 <script src="<?= base_url('assets/global/vendor/jvectormap/jquery-jvectormap.min.js') ?>"></script>
@@ -92,7 +90,7 @@
 
 <script src="<?= base_url('assets/center/assets/examples/js/forms/validation.js') ?>"></script>
 
-  
+
 </body>
 
 </html>
