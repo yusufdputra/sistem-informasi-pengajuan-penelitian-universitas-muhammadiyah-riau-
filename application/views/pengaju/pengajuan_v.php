@@ -11,50 +11,57 @@
 
     <div class="panel">
 
-      <div class="panel-body table-responsive">
-        <!-- <div class="col-md-12">
+
+      <div class="panel-body table-responsive ">
+        <div class="row">
+          <!-- <div class="col-md-12">
                     <center><img style="height: 500px" src="https://seminar-fst.uin-suska.ac.id/akademik/gambar/FlowchartPendaftaranSeminar.jpeg"></center>
                     <center><img style="height: 400px" src="https://seminar-fst.uin-suska.ac.id/akademik/gambar/sidang.jpg"></center>
                 </div> -->
-        <div class="col-md-12">
-          <div class="text-justify">
-            <h2>Deskripsi prosedur Pengajuan:</h2>
-            <table border="0">
-              <tbody>
-                <tr>
+          <div class="col-lg-6 col-md-6 ">
+            <div class="text-left">
+              <h2>Deskripsi Prosedur Pengajuan:</h2>
+              <table border="0">
+                <tbody>
+                  <tr>
 
-                  <td width="30">
-                    <h4 style="font-size: 30px">1</h4>
-                  </td>
-                  <td>
-                    <h5>Mahasiswa mengajukan permohonan judul skripsi dengan mengisi form pengajuan terlebih dahulu di website ini dengan mengklik tombol <b>ajukan judul skripsi</b> dibawah ini</h5>
-                  </td>
-                </tr>
-                <tr>
+                    <td width="30">
+                      <h4 style="font-size: 30px">1</h4>
+                    </td>
+                    <td>
+                      <h5>Mahasiswa mengajukan permohonan judul skripsi dengan mengisi form pengajuan terlebih dahulu di website ini dengan mengklik tombol <b>ajukan judul skripsi</b> dibawah ini</h5>
+                    </td>
+                  </tr>
+                  <tr>
 
-                  <td width="30">
-                    <h4 style="font-size: 30px">2</h4>
-                  </td>
-                  <td>
-                    <h5>Setelah mengajukan pendaftaran online, catat ID Pengajuan anda. Silahkah tunggu, admin akan verifikasi Pengajuan anda.</h5>
-                  </td>
-                </tr>
+                    <td width="30">
+                      <h4 style="font-size: 30px">2</h4>
+                    </td>
+                    <td>
+                      <h5>Setelah mengajukan pendaftaran online, catat ID Pengajuan anda. Silahkah tunggu, admin akan verifikasi Pengajuan anda.</h5>
+                    </td>
+                  </tr>
 
 
-                <tr>
-                  <td>
-                    <h4 style="font-size: 30px">3</h4>
-                  </td>
-                  <td>
-                    <h5>Silahkan gunakan menu Tracking untuk mengetahui status/posisi Pengajuan anda.</h5>
-                  </td>
-                </tr>
+                  <tr>
+                    <td>
+                      <h4 style="font-size: 30px">3</h4>
+                    </td>
+                    <td>
+                      <h5>Silahkan gunakan menu Tracking untuk mengetahui status/posisi Pengajuan anda.</h5>
+                    </td>
+                  </tr>
 
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-md-6 pull-left">
+              <button type="submit" class="btn btn-info pengajuan_pendaftaran" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-send"></span> Ajukan judul skripsi.</button>
+            </div>
           </div>
-          <div class="col-md-6 pull-left">
-            <button type="submit" class="btn btn-info pengajuan_pendaftaran" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-send"></span> Ajukan judul skripsi.</button>
+
+          <div class="col-lg-4 col-md-2">
+            <img src="<?= base_url('assets/prosedur.jpeg') ?>" alt="Prosedur">
           </div>
         </div>
       </div>
