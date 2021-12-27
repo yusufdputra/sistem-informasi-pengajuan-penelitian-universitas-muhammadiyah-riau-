@@ -8,6 +8,7 @@
 </footer>
 <!-- Core  -->
 
+
 <script src="<?= base_url('assets/global/vendor/babel-external-helpers/babel-external-helpers.js') ?>"></script>
 <script src="<?= base_url('assets/global/vendor/jquery/jquery.js') ?>"></script>
 <script src="<?= base_url('assets/global/vendor/popper-js/umd/popper.min.js') ?>"></script>
@@ -89,8 +90,39 @@
 <script src="<?= base_url('assets/center/assets/examples/js/tables/datatable.js') ?>"></script>
 
 <script src="<?= base_url('assets/center/assets/examples/js/forms/validation.js') ?>"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script>
+  $(function() {
+    $("#monthpicker").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      showButtonPanel: true,
+      dateFormat: 'MM yy',
+      onClose: function(dateText, inst) {
+        var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+        var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+        $(this).datepicker('setDate', new Date(year, month, 1));
+      }
+    });
 
 
+    $('#dropdownYear').each(function() {
+
+      var year = (new Date()).getFullYear();
+      var current = year;
+      year -= 3;
+      for (var i = 0; i < 6; i++) {
+        if ((year + i) == current)
+          $(this).append('<option selected value="' + (year + i) + '">' + (year + i) + '</option>');
+        else
+          $(this).append('<option value="' + (year + i) + '">' + (year + i) + '</option>');
+      }
+
+    })
+  });
+</script>
 </body>
 
 </html>

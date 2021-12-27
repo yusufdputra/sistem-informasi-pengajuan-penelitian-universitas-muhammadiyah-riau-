@@ -20,10 +20,17 @@ class Pengajuan_m extends CI_Model
 		return $this->db->get()->row();
 	}
 
-	function arsip()
+	function arsip($tanggal, $filter)
 	{
-		$this->db->select('*' );
+		$this->db->select('*');
 		$this->db->from('pengajuan');
+		if ($filter == null || $filter == 'bulan') {
+			$this->db->where('MONTH(tanggal_pengajuan)', date('m', strtotime($tanggal)));
+			$this->db->where('YEAR(tanggal_pengajuan)', date('Y', strtotime($tanggal)));
+		}else if ($filter == 'tahun') {
+			
+			$this->db->where('YEAR(tanggal_pengajuan)', $tanggal);
+		}
 		$this->db->order_by('tanggal_pengajuan', 'DESC');
 		return $this->db->get()->result();
 	}
@@ -107,6 +114,4 @@ class Pengajuan_m extends CI_Model
 		$this->db->where('u.username', $x);
 		return $this->db->get()->result();
 	}
-
-
 }

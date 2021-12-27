@@ -14,6 +14,7 @@
   <link rel="apple-touch-icon" href="<?= base_url('assets/logo_umri.png') ?>">
   <link rel="shortcut icon" href="<?= base_url('assets/logo_umri.png') ?>">
 
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?= base_url('assets/global/css/bootstrap.min.css') ?>">
   <link rel="stylesheet" href="<?= base_url('assets/global/css/bootstrap-extend.min.css') ?>">
@@ -56,6 +57,12 @@
   <link rel="stylesheet" href="<?= base_url('assets/global/fonts/web-icons/web-icons.min.css') ?>">
   <link rel="stylesheet" href="<?= base_url('assets/global/fonts/brand-icons/brand-icons.min.css') ?>">
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+  <style>
+    .ui-datepicker-calendar {
+      display: none;
+    }
+  </style>
 
   <!--[if lt IE 9]>
     <script src="../../global/vendor/html5shiv/html5shiv.min.js"></script>

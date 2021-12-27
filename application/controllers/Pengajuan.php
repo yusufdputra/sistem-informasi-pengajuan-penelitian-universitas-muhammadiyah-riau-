@@ -59,7 +59,7 @@ class Pengajuan extends CI_Controller
     }
 
     public function tracking()
-    { 
+    {
         $t['data'] = $this->Pengajuan_m->notif();
 
         $data['data'] = $this->Pengajuan_m->pengajuan_mahasiswa();
@@ -69,7 +69,8 @@ class Pengajuan extends CI_Controller
     }
 
     public function search()
-    { $t['data'] = $this->Pengajuan_m->notif();
+    {
+        $t['data'] = $this->Pengajuan_m->notif();
         $keyword = $this->input->get('keyword');
 
         $data['data'] = $this->Pengajuan_m->cari($keyword);
@@ -80,8 +81,18 @@ class Pengajuan extends CI_Controller
 
     public function arsip()
     {
+        $filter = $this->input->post('type');
+        $tanggal = date('F Y');
+        if ($filter == 'bulan') {
+            $tanggal =  $this->input->post('date');
+        } else if ($filter == 'tahun') {
+            $tanggal =  $this->input->post('date');
+        }
+
+        $data['tanggal'] = $tanggal;
+        $data['filter'] = $filter;
         $t['data'] = $this->Pengajuan_m->notif();
-        $data['data'] = $this->Pengajuan_m->arsip();
+        $data['data'] = $this->Pengajuan_m->arsip($tanggal, $filter);
 
         $this->load->view('template/header', $t);
         $this->load->view('pengaju/arsip_v', $data);

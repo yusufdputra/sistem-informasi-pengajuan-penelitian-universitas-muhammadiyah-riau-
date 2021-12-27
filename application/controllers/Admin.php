@@ -184,9 +184,19 @@
 
 		public function arsip()
 		{
+			$filter = $this->input->post('type');
+			$tanggal = date('F Y');
+			if ($filter == 'bulan') {
+				$tanggal =  $this->input->post('date');
+			} else if ($filter == 'tahun') {
+				$tanggal =  $this->input->post('date');
+			} 
 
-			$data['data'] = $this->pengajuan_m->arsip();
+			$data['tanggal'] = $tanggal;
+			$data['filter'] = $filter;
 			$t['data'] = $this->pengajuan_m->notif();
+			$data['data'] = $this->pengajuan_m->arsip($tanggal,$filter);
+
 			$this->load->view('template/header', $t);
 			$this->load->view('pengaju/arsip_v', $data);
 			$this->load->view('template/footer');

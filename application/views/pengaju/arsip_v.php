@@ -4,8 +4,22 @@
 
        <div class="panel" style="width: 100%">
          <header class="panel-heading">
-           <h3 class="panel-title">Arsip Pengajuan</h3>
+           <h3 class="panel-title">Arsip Pengajuan Per <?php
+           if (isset($filter) && $filter == 'tahun') {
+             # code...
+             echo 'Tahun '. $tanggal ;
+            }else{
+
+              echo format_indo(date('Y m', strtotime($tanggal))) ;
+            }
+           ?></h3>
+
+           <div class="panel-title">
+             <a class="btn btn-info" data-toggle="modal" data-target="#filterModal" style="color: white"><i class="icon fa-filter" aria-hidden="true"></i>Saring Data</a>
+           </div>
+
          </header>
+
 
          <div class="panel-body">
            <table class="table table-hover dataTable table-striped w-full" id="exampleTableTools">
@@ -92,11 +106,49 @@
          <div class="modal-footer">
 
            <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
-           <a target="_BLANK" class="btn" href="<?= base_url('pengajuan/cetak/'.$row->id_pengajuan) ?>">Cetak</a>
-          
+           <a target="_BLANK" class="btn" href="<?= base_url('pengajuan/cetak/' . $row->id_pengajuan) ?>">Cetak</a>
+
          </div>
 
        </div>
      </div>
    </div>
  <?php endforeach; ?>
+
+ <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+         <h3 class="modal-title" id="myModalLabel">Saring Data Berdasarkan</h3>
+       </div>
+       <div class="modal-body">
+         <form action="<?= base_url() . 'admin/arsip' ?>" enctype="multipart/form-data" method="post">
+           <div class="form-group form-material" data-plugin="formMaterial">
+             <label class="form-control-label">Bulan</label>
+             <input type="hidden" name="type" value="bulan" id="">
+             <input type="input" autocomplete="off" required id="monthpicker" placeholder="Saring Berdasarkan Bulan" class="form-control " name="date">
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success" >Terapkan</button>
+            </div>
+          </form>
+          <form action="<?= base_url() . 'admin/arsip' ?>" enctype="multipart/form-data" method="post">
+            <div class="form-group form-material" data-plugin="formMaterial">
+              <label class="form-control-label">Tahun</label>
+              <input type="hidden" name="type" value="tahun" id="">
+             <select required class="form-control" placeholder="Saring Berdasarkan Bulan" id="dropdownYear" name="date">
+             </select>
+           </div>
+           <div class="modal-footer">
+             <button type="submit" class="btn btn-success" >Terapkan</button>
+           </div>
+         </form>
+
+
+
+
+       </div>
+     </div>
+   </div>
+ </div>
